@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#read -p "What file do you want to backup: " FILENAME
+
+if [ -z $1 ]
+then
+	echo Argument Required
+	exit 9
+fi
+
+DATE=$(date +%Y%m%d.%H%S)
+
+echo "New filename is $PWD/$1.$DATE"
+
+cp -p $1 $1.$DATE
